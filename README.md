@@ -60,6 +60,7 @@
 ![](https://i.imgur.com/NMKgXjx.jpg)
 
 8. 這邊使用 SSH 連線。
+
 ![](https://i.imgur.com/GkqK85u.jpg)
 ### 安裝各項資源
 1. install mosquitto
@@ -299,6 +300,7 @@ void reconnect() {  //reconnect MQTT
 ### 分工
 葉浩堯
 * AWS EC2、套件等資源安裝與連結、sensor 提供、文件撰寫。
+
 陳佳境
 * Arduino sensor 與程式研究、文件撰寫
 ## 資考資料
