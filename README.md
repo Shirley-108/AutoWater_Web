@@ -35,33 +35,32 @@
 
 ## 實作
 ### 在 AWS EC2 建立虛擬機
-![](https://i.imgur.com/59Bmgmj.png)
 1. 打開 AWS console，選 EC2
+![](https://i.imgur.com/59Bmgmj.png)
 
-![](https://i.imgur.com/0dF5lS2.png)
 2. 左邊選單選擇 Instances
+![](https://i.imgur.com/0dF5lS2.png)
 
-![](https://i.imgur.com/9S5rtfy.png)
 3. 畫面右邊選擇 Launch Instances
+![](https://i.imgur.com/9S5rtfy.png)
 
-![](https://i.imgur.com/fCazrrC.png)
 4. 選擇使用的OS，這邊選擇 Ubuntu 20.04
+![](https://i.imgur.com/fCazrrC.png)
 
-![](https://i.imgur.com/Y3OrrZu.jpg)
 5. 使用免費的選項
+![](https://i.imgur.com/Y3OrrZu.jpg)
 
+6. 一直點選 next 到 key 的部分，如果沒有 key 選擇 create a new key pair。
 ![](https://i.imgur.com/kyOgyQS.jpg)
-6. 全 next 後來到 key，沒有 key 選 create a new key pair
 
+如果已經有 key，使用已有的 key 選 choose an existing key pair
 ![](https://i.imgur.com/U5DU05P.jpg)
-用已有的 key 選 choose an existing key pair
 
+7. 點選新建的 instance，下方 details 顯示這台 VM 的 public IP，接著點選上方 connect 連上 instance。
 ![](https://i.imgur.com/NMKgXjx.jpg)
-7. 點新建的 instance，下方 details 有這台 VM 的 public IP。 點上方 connect 連上 instance。
 
+8. 這邊使用 SSH 連線。
 ![](https://i.imgur.com/GkqK85u.jpg)
-8. 這邊使用 SSH 連上去
-
 ### 安裝各項資源
 1. install mosquitto
 ```
@@ -82,7 +81,7 @@ sudo apt install npm    // if npm is not installed with nodejs
 sudo apt install mongodb
 ```
 
-4. mqtt-web-panel
+4. 下載 mqtt-web-panel
 ```
 git clone git://github.com/mingruport/mqtt-web-panel.git
 cd mqtt-web-panel/
@@ -100,7 +99,7 @@ MQTT_USERNAME=''
 MQTT_PASSWORD=''
 ```
 
-6. 回到 `mqtt-web-panel/`
+6. 回到 `mqtt-web-panel/` 資料夾
 port 要設定 1024 以下(如80)，需使用 `sudo npm start`
 ```
 sudo npm install
