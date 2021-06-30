@@ -297,6 +297,8 @@ void reconnect() {  //reconnect MQTT
 * http://lsa2final04.hopto.org:8080/
 * 可即時查看目前溫度、空氣溼度、土壤濕度數據。
 ![](https://i.imgur.com/lLfynSr.png)
+* 影片 Demo
+
 https://youtu.be/o0rWqznWBAI
 ### 分工
 葉浩堯
