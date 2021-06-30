@@ -35,20 +35,20 @@
 
 ## 實作
 ### 在 AWS EC2 建立虛擬機
-1. 打開 AWS console，選 EC2
+1. 打開 AWS console，選澤 EC2。
 ![](https://i.imgur.com/59Bmgmj.png)
 
-2. 左邊選單選擇 Instances
+2. 選擇左邊選單 Instances 選項。
 
 ![](https://i.imgur.com/0dF5lS2.png)
 
-3. 畫面右邊選擇 Launch Instances
+3. 選擇畫面右邊 Launch Instances。
 ![](https://i.imgur.com/9S5rtfy.png)
 
-4. 選擇使用的OS，這邊選擇 Ubuntu 20.04
+4. 選擇 OS，這邊選擇 Ubuntu 20.04。
 ![](https://i.imgur.com/fCazrrC.png)
 
-5. 使用免費的選項
+5. 選擇使用免費選項。
 ![](https://i.imgur.com/Y3OrrZu.jpg)
 
 6. 一直點選 next 到 key 的部分，如果沒有 key 選擇 create a new key pair。
@@ -57,7 +57,7 @@
 如果已經有 key，使用已有的 key 選 choose an existing key pair
 ![](https://i.imgur.com/U5DU05P.jpg)
 
-7. 點選新建的 instance，下方 details 顯示這台 VM 的 public IP，接著點選上方 connect 連上 instance。
+7. 點選新建好的 instance，下方 details 顯示這台 VM 的 public IP，接著點選上方 connect 連線上 instance。
 ![](https://i.imgur.com/NMKgXjx.jpg)
 
 8. 這邊使用 SSH 連線。
@@ -304,7 +304,7 @@ void reconnect() {  //reconnect MQTT
 
 陳佳境
 * Arduino sensor 與程式研究、文件撰寫
-## 資考資料
+## 參考資料
 1. [溫濕度模組](https://www.taiwaniot.com.tw/product/dht22-%E6%BA%AB%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BA%AB%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-dht22/)
 2. [Arduino筆記(27)：土壤濕度檢測YL-38 + YL-69](https://atceiling.blogspot.com/2017/06/arduinoyl-38-yl-69.html)
 3. [mqtt-web-panel](https://github.com/mingruport/mqtt-web-panel)
