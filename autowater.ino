@@ -1,31 +1,42 @@
-#include <DHT_U.h>
 #include <DHT.h>
-
 #include <LWiFi.h>
 #include <PubSubClient.h>
 
+// DHT setup
 #define DHTPIN A0     // what pin we're connected to
 #define DHTTYPE DHT11
 
-char ssid[] = "R17";
-char password[] = "yololife";
-char mqtt_server[] = "18.232.133.157";  // change this  // 163.22.20.128
-char client_Id[] = "linkit-7697";
-char sub_topic[] = "test";
+// connect to wifi
+char ssid[] = "(your-wifi-ssid)";
+char password[] = "(your-wifi-password)";
 
-char pub_topic1[] = "Humidity";
-char pub_topic2[] = "Temperature";
-char pub_topic3[] = "Soil";
+// connect to mqtt
+char mqtt_server[] = "(your-mqtt-server-address)";    // change before use
+
+// id sending to mqtt
+char client_Id[] = "group04-linkit-7697";
+
+// publish topic
+char pub_topic1[] = "group04/Humidity";         // Humidity
+char pub_topic2[] = "group04/Temperature";      // Temperature
+char pub_topic3[] = "group04/Soil";             // Soil
 
 int status = WL_IDLE_STATUS;
 
-WiFiClient mtclient;     
+WiFiClient mtclient;
 PubSubClient client(mtclient);
-long lastMsg = 0;
-char msg[50];
-int value = 0;
 
 DHT dht(DHTPIN, DHTTYPE);
+char Humid[] = "";
+char Temp[] = "";
+char SoilH[] = "";
+char WCount[] = "";
+
+const int relayPin = 3;
+
+const int maxSoilHumid = 10;    // change according to setup
+int currentHumidity = 0;
+
 
 void setup() {
     //Initialize serial and wait for port to open:
@@ -39,25 +50,26 @@ void setup() {
 }
 
 void loop() {
-  if (!client.connected()) {
-    reconnect();
-  }
-  DHT();
-  client.loop();
+    if (!client.connected()) {
+        reconnect();
+    }
+    DHT();
+    SoilHumid();
+    Autowater(currentHumidity);
+    client.loop();
+    delay(100);
 }
-
-char Humid[] = "";
-char Temp[] = "";
 
 void DHT() {
     float h = dht.readHumidity();
     float t = dht.readTemperature();
+
     // check if returns are valid, if they are NaN (not a number) then something went wrong!
     if (isnan(t) || isnan(h)) 
     {
         Serial.println("Failed to read from DHT");
     } 
-    else 
+    else if(h > 10 && t > 1)
     {
         Serial.print("Humidity: "); 
         Serial.print(h);
@@ -70,6 +82,32 @@ void DHT() {
         n = sprintf(Temp, "%.1f", t);
         client.publish(pub_topic2, Temp);
     }
+    delay(100);
+}
+
+void SoilHumid() {
+    int n = analogRead(A1);
+    Serial.print("Soil ");
+    Serial.print("A1: ");
+    Serial.print(n);
+    int h = n / maxSoilHumid;
+    int x = sprintf(SoilH, "%d", h);
+    Serial.println(h);
+    client.publish(pub_topic3, SoilH);
+    currentHumidity = h;
+}
+
+
+
+void Autowater(float humid) {
+    if (buttonState == false)
+    if(humid < 100) {
+        digitalWrite(relayPin, true);
+    }
+    else if(humid >= 100) {
+        digitalWrite(relayPin, false);
+    }
+    delay(10);
 }
 
 void printWifiStatus() {                     //print Wifi status
@@ -106,8 +144,8 @@ void setup_wifi() {                       //setup Wifi
 void callback(char* topic, byte* payload, unsigned int length) {   //MQTT sub
   Serial.print("Input Message arrived [");
   Serial.print(sub_topic);
+  Serial.print(sub_topic2);
   Serial.print("] ");
-//   Serial.print((char)payload[0]);
   for (int i=0;i<length;i++) {
     Serial.print((char)payload[i]);
   }
@@ -129,6 +167,7 @@ void reconnect() {  //reconnect MQTT
       // Once connected, publish an announcement...
       // ... and resubscribe
       client.subscribe(sub_topic);
+      client.subscribe(sub_topic2);
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
