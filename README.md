@@ -126,11 +126,10 @@ char password[] = "(your-wifi-password)";
 
 // connect to mqtt
 char mqtt_server[] = "(your-mqtt-server-address)";    // change before use
+
 // id sending to mqtt
 char client_Id[] = "group04-linkit-7697";
-// subscribe topic
-char sub_topic[] = "group04/percentage";
-char sub_topic2[] = "group04/oled";
+
 // publish topic
 char pub_topic1[] = "group04/Humidity";         // Humidity
 char pub_topic2[] = "group04/Temperature";      // Temperature
@@ -298,8 +297,8 @@ void reconnect() {  //reconnect MQTT
 * 可即時查看目前溫度、空氣溼度、土壤濕度數據。
 ![](https://i.imgur.com/lLfynSr.png)
 * 影片 Demo
-
 https://youtu.be/o0rWqznWBAI
+
 ### 分工
 葉浩堯
 * AWS EC2、套件等資源安裝與連結、sensor 提供、文件撰寫。
