@@ -297,13 +297,13 @@ void reconnect() {  //reconnect MQTT
 * http://lsa2final04.hopto.org:8080/
 * 可即時查看目前溫度、空氣溼度、土壤濕度數據。
 ![](https://i.imgur.com/lLfynSr.png)
-
+https://youtu.be/o0rWqznWBAI
 ### 分工
 葉浩堯
 * AWS EC2、套件等資源安裝與連結、sensor 提供、文件撰寫。
 
 陳佳境
-* Arduino sensor 與程式研究、文件撰寫
+* Arduino sensor 與程式研究、文件撰寫、影片剪輯。
 ## 參考資料
 1. [溫濕度模組](https://www.taiwaniot.com.tw/product/dht22-%E6%BA%AB%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BA%AB%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-dht22/)
 2. [Arduino筆記(27)：土壤濕度檢測YL-38 + YL-69](https://atceiling.blogspot.com/2017/06/arduinoyl-38-yl-69.html)
