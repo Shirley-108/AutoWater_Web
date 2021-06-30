@@ -20,14 +20,14 @@
 
 | 設備名稱             | 數量 | 圖片                                 | 來源 |
 | -------------------- | ---- | ------------------------------------ | ---- |
-| LinkIt 7697          | 1    | ![](https://i.imgur.com/aUM6pvG.png) |      |
-| 空氣溫度、濕度感測器 | 1    | ![](https://i.imgur.com/EqUIH8X.png) |      |
-| 土壤濕度感測器       | 1    | ![](https://i.imgur.com/VBKcwkY.png) |      |
-| 杜邦線               | 數條 | ![](https://i.imgur.com/sNIO1kV.png) |      |
-| 繼電器               | 1    | ![](https://i.imgur.com/fJTY1Cc.png) |      |
-| 抽水馬達             | 1    | ![](https://i.imgur.com/bxw0vFs.png) |      |
-| 9V電池端子           | 1    | ![](https://i.imgur.com/pHNHRoA.jpg) |      |
-| 9V電池               |      |![](https://i.imgur.com/nWVu6mZ.png) |      |
+| LinkIt 7697          | 1    | ![](https://i.imgur.com/aUM6pvG.png) |  葉浩堯同學提供    |
+| 空氣溫度、濕度感測器 | 1    | ![](https://i.imgur.com/EqUIH8X.png) |  葉浩堯同學提供    |
+| 土壤濕度感測器       | 1    | ![](https://i.imgur.com/VBKcwkY.png) |  葉浩堯同學提供    |
+| 杜邦線               | 數條 | ![](https://i.imgur.com/sNIO1kV.png) |  葉浩堯同學提供    |
+| 繼電器               | 1    | ![](https://i.imgur.com/fJTY1Cc.png) |  葉浩堯同學提供    |
+| 抽水馬達             | 1    | ![](https://i.imgur.com/bxw0vFs.png) |  葉浩堯同學提供    |
+| 9V電池端子           | 1    | ![](https://i.imgur.com/pHNHRoA.jpg) |  葉浩堯同學提供    |
+| 9V電池               |  1    |![](https://i.imgur.com/nWVu6mZ.png) |  葉浩堯同學提供    |
 
 ## LinkIt 7697 與各種感測器連接圖
 ![](https://i.imgur.com/Xwbb11d.jpg)
@@ -296,8 +296,11 @@ void reconnect() {  //reconnect MQTT
 * 可即時查看目前溫度、空氣溼度、土壤濕度數據。
 ![](https://i.imgur.com/lLfynSr.png)
 
-<!--## 分工-->
-
+### 分工
+葉浩堯
+* AWS EC2、套件等資源安裝與連結、sensor 提供、文件撰寫。
+陳佳境
+* Arduino sensor 與程式研究、文件撰寫
 ## 資考資料
 1. [溫濕度模組](https://www.taiwaniot.com.tw/product/dht22-%E6%BA%AB%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-%E6%BA%AB%E6%BF%95%E5%BA%A6%E6%A8%A1%E7%B5%84-dht22/)
 2. [Arduino筆記(27)：土壤濕度檢測YL-38 + YL-69](https://atceiling.blogspot.com/2017/06/arduinoyl-38-yl-69.html)
