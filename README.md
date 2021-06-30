@@ -39,6 +39,7 @@
 ![](https://i.imgur.com/59Bmgmj.png)
 
 2. 左邊選單選擇 Instances
+
 ![](https://i.imgur.com/0dF5lS2.png)
 
 3. 畫面右邊選擇 Launch Instances
